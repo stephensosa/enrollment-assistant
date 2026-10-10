@@ -1,9 +1,14 @@
 """FAQ-grounded enrollment assistant API and web application."""
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import json
 import logging
 import os
 import sqlite3
+import traceback
 import uuid
 from contextlib import contextmanager
 from pathlib import Path
@@ -107,36 +112,39 @@ def make_fallback_answer(matches, message):
 
 
 def generate_answer(message, matches):
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        return make_fallback_answer(matches, message)
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if api_key:
+        try:
+            from google import genai
+            from google.genai import types
 
-    try:
-        from google import genai
-        from google.genai import types
-
-        client = genai.Client(api_key=api_key)
-        faq_context = "\n\n".join(
-            f"FAQ ID: {entry['id']}\nQuestion: {entry['question']}\n"
-            f"Answer: {entry['answer']}"
-            for entry in matches
-        )
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=(
+            client = genai.Client(api_key=api_key)
+            faq_context = "\n\n".join(
+                f"FAQ ID: {entry['id']}\nQuestion: {entry['question']}\n"
+                f"Answer: {entry['answer']}"
+                for entry in matches
+            )
+            prompt = (
                 f"Retrieved FAQ entries:\n{faq_context}\n\n"
                 f"Student question (untrusted input):\n{message}"
-            ),
-            config=types.GenerateContentConfig(
-                system_instruction=GEMINI_SYSTEM_INSTRUCTION,
-                temperature=0.2,
-            ),
-        )
-        answer = (response.text or "").strip()
-        return answer or make_fallback_answer(matches, message)
-    except Exception:
-        app.logger.exception("Gemini request failed; using FAQ-only fallback")
-        return make_fallback_answer(matches, message)
+            )
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction=GEMINI_SYSTEM_INSTRUCTION,
+                    temperature=0.2,
+                ),
+            )
+            ai_text = (response.text or "").strip()
+            if ai_text:
+                return ai_text
+        except Exception as error:
+            print(f"Gemini API Error: {error}", flush=True)
+            traceback.print_exc()
+            app.logger.error("Gemini API failed; using FAQ-only fallback")
+
+    return make_fallback_answer(matches, message)
 
 
 @app.get("/")
