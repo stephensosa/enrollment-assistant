@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f5ef">
+  <title>Enrollment Desk</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='chat.js') }}" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Enrollment Desk home">
+      <span class="brand-mark" aria-hidden="true">E</span>
+      <span>Enrollment <span class="brand-light">Desk</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <span class="service-status"><span aria-hidden="true"></span> Student services</span>
+      <a class="admin-link" href="/admin">Admin <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <div class="page-heading">
+      <p class="eyebrow">ENROLLMENT SUPPORT</p>
+      <h1>How can we help?</h1>
+      <p class="heading-note">Official dates, balances, and eligibility should be confirmed with your school office.</p>
+    </div>
+
+    <section class="chat-panel" aria-label="Enrollment chat">
+      <div class="chat-panel-head">
+        <div class="agent-identity">
+          <span class="agent-mark" aria-hidden="true">E</span>
+          <div><strong>Enrollment assistant</strong><span>Student services</span></div>
+        </div>
+        <span class="secure-label"><span aria-hidden="true">●</span> FAQ grounded</span>
+      </div>
+
+      <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions">
+        <article class="message assistant-message">
+          <div class="message-copy">Hello! Ask me about enrollment requirements, schedules, payments, scholarships, or registrar services.</div>
+        </article>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <label class="visually-hidden" for="message-input">Your enrollment question</label>
+        <textarea id="message-input" name="message" rows="1" maxlength="500" placeholder="Write your question..." required></textarea>
+        <div class="composer-foot">
+          <span class="input-note"><span id="character-count">0</span>/500</span>
+          <button id="send-button" class="send-button" type="submit">
+            <span>Send</span>
+              <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </form>
+    </section>
+    <footer class="page-footer"><span>Enrollment Desk</span><span>Check official school channels for final decisions.</span></footer>
+  </main>
+</body>
+</html>

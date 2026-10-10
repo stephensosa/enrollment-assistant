@@ -1,0 +1,51 @@
+text,category
+What documents do I need to enroll?,requirements
+What are the admission requirements for first-year students?,requirements
+Do I need to submit my previous transcript?,requirements
+Which identification documents are accepted for enrollment?,requirements
+Kailangan ba ng birth certificate para makapag-enroll?,requirements
+Ano ang mga requirements para sa transferee?,requirements
+Do returning students need to submit new documents?,requirements
+Is proof of graduation required before registration?,requirements
+Saan ko ipapasa ang enrollment documents ko?,requirements
+Can I enroll if one required document is still pending?,requirements
+When does enrollment start for the next term?,schedule
+What is the deadline to register for classes?,schedule
+When will the academic calendar be posted?,schedule
+Can I change my subjects after registration closes?,schedule
+Kailan ang simula ng enrollment para sa susunod na semester?,schedule
+Hanggang kailan puwedeng magpa-add ng subject?,schedule
+Where can I see my assigned registration date?,schedule
+Is late enrollment allowed this term?,schedule
+May schedule ba para sa enrollment ng freshmen?,schedule
+What time does registration open on the first day?,schedule
+How can I pay my enrollment fees?,payment
+What payment methods are accepted by the school?,payment
+Where can I download my statement of account?,payment
+Can I pay my tuition in installments?,payment
+Puwede ba magbayad online ng tuition?,payment
+Saan makikita ang balance ko para sa enrollment?,payment
+What should I do if my payment is not reflected?,payment
+Is there a fee for late payment?,payment
+Pwede bang magbayad sa cashier gamit ang card?,payment
+How do I request an official receipt for my payment?,payment
+How can I apply for a scholarship?,scholarship
+What scholarship programs are available to students?,scholarship
+What is the deadline for scholarship applications?,scholarship
+Do I need a minimum GPA to keep my scholarship?,scholarship
+Paano mag-apply para sa scholarship ng paaralan?,scholarship
+Ano ang mga dokumento para sa scholarship application?,scholarship
+Can transferees apply for financial aid?,scholarship
+Where can I check my scholarship application status?,scholarship
+May scholarship ba para sa working students?,scholarship
+Will my scholarship cover miscellaneous fees too?,scholarship
+How do I request a copy of my transcript of records?,registrar_services
+Where can I get a certificate of enrollment?,registrar_services
+How long does it take to process a registrar request?,registrar_services
+How can I correct an error in my student record?,registrar_services
+Paano kumuha ng certificate of grades?,registrar_services
+Saan ko ipapasa ang request para sa transcript?,registrar_services
+What should I bring to claim an official school record?,registrar_services
+Can someone else collect my document for me?,registrar_services
+Paano magpa-correct ng pangalan sa student record?,registrar_services
+How do I contact the registrar about a pending request?,registrar_services

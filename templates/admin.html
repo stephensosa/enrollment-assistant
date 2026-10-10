@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f5ef">
+  <title>Enrollment Desk · Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    async function loadStats() {
+      const status = document.getElementById('stats-status');
+      try {
+        const response = await fetch('/api/stats');
+        if (!response.ok) throw new Error('Stats unavailable');
+        const stats = await response.json();
+        document.getElementById('total-questions').textContent = stats.total_questions;
+        document.getElementById('positive-rate').textContent = `${stats.thumbs_up_percentage}%`;
+        document.getElementById('total-ratings').textContent = stats.total_ratings;
+        const categories = document.getElementById('category-counts');
+        categories.replaceChildren();
+        for (const [category, count] of Object.entries(stats.questions_per_category)) {
+          const row = document.createElement('div');
+          row.className = 'stat-row';
+          const label = document.createElement('span');
+          label.textContent = category.replaceAll('_', ' ');
+          const value = document.createElement('strong');
+          value.textContent = count;
+          row.append(label, value);
+          categories.append(row);
+        }
+        status.textContent = 'Updated just now';
+      } catch {
+        status.textContent = 'Stats could not be loaded.';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadStats);
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Enrollment Desk home">
+      <span class="brand-mark" aria-hidden="true">E</span>
+      <span>Enrollment <span class="brand-light">Desk</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="admin-link" href="/">← Back to chat</a>
+    </nav>
+  </header>
+
+  <main class="page-shell admin-shell">
+    <div class="page-heading admin-heading">
+      <p class="eyebrow">STUDENT SERVICES</p>
+      <h1>Conversation stats</h1>
+      <p id="stats-status" class="heading-note" aria-live="polite">Loading…</p>
+    </div>
+
+    <section class="summary-grid" aria-label="Feedback summary">
+      <article class="summary-panel summary-primary">
+        <span>Total questions</span>
+        <strong id="total-questions">—</strong>
+        <small>Across all intents</small>
+      </article>
+      <article class="summary-panel">
+        <span>Thumbs up</span>
+        <strong id="positive-rate">—</strong>
+        <small id="total-ratings">— ratings</small>
+      </article>
+    </section>
+
+    <section class="stats-panel" aria-labelledby="category-title">
+      <div class="stats-panel-head"><h2 id="category-title">Questions by category</h2><span>ALL TIME</span></div>
+      <div id="category-counts" class="category-counts" aria-live="polite">
+        <p class="loading-stats">Waiting for stats…</p>
+      </div>
+    </section>
+    <footer class="page-footer"><span>Enrollment Desk</span><a href="/">Return to assistant</a></footer>
+  </main>
+</body>
+</html>

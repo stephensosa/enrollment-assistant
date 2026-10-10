@@ -1,0 +1,116 @@
+[
+  {
+    "id": "REQ-01",
+    "category": "requirements",
+    "question": "What documents are needed to enroll?",
+    "answer": "Required documents vary by program and student type. Check the current official admissions checklist or contact the admissions office before submitting documents."
+  },
+  {
+    "id": "REQ-02",
+    "category": "requirements",
+    "question": "What are the requirements for a transferee?",
+    "answer": "Transferee requirements depend on the program and prior school records. Ask admissions for the current transferee checklist and instructions for submitting academic records."
+  },
+  {
+    "id": "REQ-03",
+    "category": "requirements",
+    "question": "Can I enroll with a pending document?",
+    "answer": "Only the admissions or registrar office can confirm whether a pending document may be submitted later. Contact that office and ask for written instructions before completing registration."
+  },
+  {
+    "id": "REQ-04",
+    "category": "requirements",
+    "question": "Where should enrollment documents be submitted?",
+    "answer": "Use the submission channel stated in the current official admissions instructions. If it is unclear, contact admissions and avoid sending sensitive records to unofficial accounts."
+  },
+  {
+    "id": "SCH-01",
+    "category": "schedule",
+    "question": "When does enrollment start and end?",
+    "answer": "Enrollment dates are term-specific and are not provided in this FAQ. Check the institution's official academic calendar or contact the registrar for confirmed dates."
+  },
+  {
+    "id": "SCH-02",
+    "category": "schedule",
+    "question": "When is the registration deadline?",
+    "answer": "The registration deadline depends on the term. Confirm the date in the official academic calendar or directly with the registrar."
+  },
+  {
+    "id": "SCH-03",
+    "category": "schedule",
+    "question": "Can I register late or change subjects?",
+    "answer": "Late registration and subject changes depend on current school rules and deadlines. Ask the registrar or academic adviser whether your request is still allowed."
+  },
+  {
+    "id": "SCH-04",
+    "category": "schedule",
+    "question": "Where can I find my registration schedule?",
+    "answer": "Check official student announcements, your student account, or the academic calendar. Contact the registrar if your assigned registration date is missing."
+  },
+  {
+    "id": "PAY-01",
+    "category": "payment",
+    "question": "How can I pay tuition and what methods are accepted?",
+    "answer": "Accepted payment methods are institution-specific. Check the current official statement of account or cashier instructions before paying."
+  },
+  {
+    "id": "PAY-02",
+    "category": "payment",
+    "question": "Can I pay in installments?",
+    "answer": "Installment options and terms depend on the institution and term. Contact the cashier or finance office to confirm eligibility and the current payment schedule."
+  },
+  {
+    "id": "PAY-03",
+    "category": "payment",
+    "question": "My payment is not reflected. What should I do?",
+    "answer": "Keep your official receipt or transaction reference and contact the cashier or finance office through an official channel. Do not share full payment credentials or account passwords."
+  },
+  {
+    "id": "PAY-04",
+    "category": "payment",
+    "question": "Where can I get my balance or official receipt?",
+    "answer": "Check your official student account for the statement of account and ask the cashier how to obtain an official receipt. Never send payment card details or passwords in chat."
+  },
+  {
+    "id": "SCHOL-01",
+    "category": "scholarship",
+    "question": "How do I apply for a scholarship?",
+    "answer": "Scholarship programs, eligibility, and application steps vary. Contact the official scholarship or student-affairs office for the current list and application instructions."
+  },
+  {
+    "id": "SCHOL-02",
+    "category": "scholarship",
+    "question": "What is the scholarship deadline and required documents?",
+    "answer": "Deadlines and required documents depend on the scholarship program. Confirm the current checklist and deadline with the scholarship office before applying."
+  },
+  {
+    "id": "SCHOL-03",
+    "category": "scholarship",
+    "question": "How can I check my scholarship status or renewal requirements?",
+    "answer": "Contact the scholarship office using an official channel to check your application status and confirm renewal criteria. Do not share your student-account password."
+  },
+  {
+    "id": "REG-01",
+    "category": "registrar_services",
+    "question": "How do I request a transcript or certificate?",
+    "answer": "Submit a records request through the registrar's official process. Ask which identification, authorization, fees, and processing details apply to your specific document."
+  },
+  {
+    "id": "REG-02",
+    "category": "registrar_services",
+    "question": "How long does a registrar request take?",
+    "answer": "Processing time depends on the document and current registrar workload. Ask the registrar for the current estimate when you submit your request."
+  },
+  {
+    "id": "REG-03",
+    "category": "registrar_services",
+    "question": "How do I correct a student-record error?",
+    "answer": "Contact the registrar through an official channel and ask how to request a correction and which supporting documents are needed. Do not post identity documents in a public chat."
+  },
+  {
+    "id": "REG-04",
+    "category": "registrar_services",
+    "question": "Can someone else collect my school record?",
+    "answer": "Authorization and identity-check rules vary by institution and record type. Ask the registrar for its current written requirements before sending a representative."
+  }
+]
